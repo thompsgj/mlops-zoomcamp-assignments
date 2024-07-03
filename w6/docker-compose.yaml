@@ -1,0 +1,11 @@
+# docker compose up
+# aws --endpoint-url http://localhost:4566 s3 mb s3://nyc-duration
+# aws --endpoint-url http://localhost:4566 s3 ls nyc-duration
+
+services:
+  localstack:
+    image: localstack/localstack
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3
